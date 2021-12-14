@@ -29,21 +29,397 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
 
+    <!-- BXSlider -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+
     <!-- CSS Reset -->
     <link rel="stylesheet" href="./css/reset.css">
-    
-
-
     <title>Indigo</title>
+    <style>
+       .clearfix::after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+        :root{
+            font-family: 'Noto Sans KR','sans-serif';
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 29px;
+            color: #616161;
+        }
+
+        .container{
+            width: 1132px;
+            margin: 0 auto;
+        }
+
+        .full-container{
+            width: 100%;
+        }
+
+        h1,h2,h3{ 
+            font-size: 26px;
+            color:#3f51b5;
+            text-transform: uppercase;
+        }
+
+        h2{
+            font-size: 42px;
+        }
+
+        h3{
+            font-size: 16px;
+        }
+
+        .hidden-tit{
+            height: 0; 
+            overflow: hidden;
+        }
+
+        .sec{
+            margin-bottom: 120px;
+        }
+
+        /* 스킵 메뉴 스타일 */
+        .skip-menu a{
+            position: fixed;
+            left:0;
+            top:-100px;
+            z-index: 999999;
+
+            padding: 10px 20px;
+            background-color: #616161;
+            font-size: 1.4em;
+            color: #fff;
+        }
+
+        .skip-menu a:focus{
+            top:0;
+        }
+
+        .wrap{
+            overflow: hidden;
+        }
+
+        /* header 스타일 시작 */
+        .header{
+            position:fixed;
+            left:0;
+            right:0;
+            top:0;
+            padding: 24px 52px;
+            background-color: #fff;
+            z-index: 1000;
+        }
+
+        .header .container h1{
+            float: left;
+        }
+
+        .header .container nav{
+            float: right;
+        }
+
+        .header .container nav ul li{
+            display: inline-block;
+            margin-left: 22px;
+            color:#3f51b5;
+        }
+     
+        /* header 스타일 끝 */
+
+
+        /* slider 스타일 시작 */
+        .slider{
+            position: relative;
+            z-index: 900;
+            margin-top: 77px;}
+
+        .bx-controls-direction{
+            display: none;
+        }
+
+        .bx-pager.bx-default-pager{
+            bottom:30px;
+        }
+        .bx-wrapper .bx-pager.bx-default-pager a{
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background-color: #616161;
+        }
+
+        .bx-wrapper .bx-pager.bx-default-pager a.active,
+        .bx-wrapper .bx-pager.bx-default-pager a:hover{
+            background-color: #3f51b5;
+        }
+
+        .bx-wrapper{
+            box-shadow: none;
+            border:none;
+            margin-bottom: 0;
+        }
+
+        /* slider 스타일 끝 */
+
+
+        /* WE ARE 스타일 시작 */
+        .we-are h2{
+            float: left;
+            width: 484px;
+            margin-right: 20px;
+            border-right: 2px solid #616161;
+        }
+
+        .we-are>.container>p{
+            float: left;
+            width: 628px;
+        }
+
+        .we-are ul{
+            float: left;
+        }
+
+        .we-are li{
+            float: left;
+            width: 268px;
+            margin-right: 20px;
+        }
+
+        .we-are li:last-child{
+            margin-right: 0;
+        }
+
+        /* WE ARE 스타일 끝 */
+
+    </style>
 </head>
 <body>
-    <img src="./images/img-work01.jpg" alt="">
-    <img src="./images/img-work02.jpg" alt="">
-    <img src="./images/img-work03.jpg" alt="">
-    <img src="./images/img-work04.jpg" alt="">
-    <img src="./images/img-work05.jpg" alt="">
-    <img src="./images/img-work06.jpg" alt="">
-    <img src="./images/img-work07.jpg" alt="">
-    <img src="./images/img-work08.jpg" alt="">
+    <!-- 스킵메뉴 시작 -->
+    <div class="skip-menu">
+        <a href="#we-are">we are 바로가기</a>
+        <a href="#work">work 바로가기</a>
+        <a href="#blog">blog 바로가기</a>
+        <a href="#contact">contact us 바로가기</a>
+    </div>
+    <!-- 스킵메뉴 끝 -->
+
+    <section class="wrap">
+        <header class="header">
+            <div class="container full-container clearfix">
+                <h1 class="logo">
+                    <a href="index.html">INDIGO</a>
+                </h1>
+
+                <nav>
+                    <ul>
+                        <li><a href="index.html">HOME</a></li>
+                        <li><a href="#we-are">WE ARE</a></li>
+                        <li><a href="#work">WORK</a></li>
+                        <li><a href="#blog">BLOG</a></li>
+                        <li><a href="#contact">CONTACT US</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <section class="sec slider">
+            <div class="container full-container">
+                <h2 class="hidden-tit">slider</h2>
+                <div class="slide">
+                    <div><img src="./images/slide01.jpg" alt="슬라이드1"></div>
+                    <div><img src="./images/slide02.jpg" alt="슬라이드2"></div>
+                    <div><img src="./images/slide03.jpg" alt="슬라이드3"></div>
+                    <div><img src="./images/slide04.jpg" alt="슬라이드4"></div>
+                    <div><img src="./images/slide05.jpg" alt="슬라이드5"></div>
+                </div>
+                
+            </div>
+        </section>
+
+        <section class="sec we-are" id="we-are">
+            <div class="container clearfix">
+                    <h2>we are</h2>
+                    <p>
+                        Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a
+                        piece of classical Latin literature from 45 BC, making it over 2000 years old.
+                    </p>
+                             
+                   <ul class="clearfix">
+                        <li>
+                           <div class="icon-box"><img src="./images/ico-pro01.jpg" alt="home"></div>
+                           <h3>HOME</h3>
+                           <p>Lorem Ipsum is simply dummy text of
+                            the printing and typesetting industry.</p>
+                        </li>
+
+                        <li>
+                           <div class="icon-box"><img src="./images/ico-pro02.jpg" alt="we are"></div>
+                           <h3>WE ARE</h3>
+                           <p>Lorem Ipsum is simply dummy text of
+                            the printing and typesetting industry.</p>
+                        </li>
+
+                        <li>
+                           <div class="icon-box"><img src="./images/ico-pro03.jpg" alt="work"></div>
+                           <h3>WORK</h3>
+                           <p>Lorem Ipsum is simply dummy text of
+                            the printing and typesetting industry.</p>
+                        </li>
+
+                        <li>
+                           <div class="icon-box"><img src="./images/ico-pro04.jpg" alt="blog"></div>
+                           <h3>BLOG</h3>
+                           <p>Lorem Ipsum is simply dummy text of
+                            the printing and typesetting industry.</p>
+                        </li>
+                   </ul>      
+            </div>
+        </section>
+
+        <section class="sec divider">
+            <div class="container">
+                <hr>
+            </div>
+        </section>
+
+        <section class="sec work" id="work">
+            <div class="container full-container">
+                <h2>work</h2>
+                <div class="work-list">
+                    <ul>
+                        <li>
+                            <div class="work-img"><img src="./images/img-work01.jpg" alt="달리기"></div>
+                            <div class="work-txt">
+                                <h3>달리기</h3>
+                                <h4>육상</h4>
+                            </div>
+
+                            <div class="work-img"><img src="./images/img-work02.jpg" alt="미식축구"></div>
+                            <div class="work-txt">
+                                <h3>미식축구</h3>
+                                <h4>구기</h4>
+                            </div>
+
+                            <div class="work-img"><img src="./images/img-work03.jpg" alt="헬스"></div>
+                            <div class="work-txt">
+                                <h3>헬스</h3>
+                                <h4>트레이닝</h4>
+                            </div>
+
+                            <div class="work-img"><img src="./images/img-work04.jpg" alt="달리기2"></div>
+                            <div class="work-txt">
+                                <h3>달리기2</h3>
+                                <h4>육상</h4>
+                            </div>
+
+                            <div class="work-img"><img src="./images/img-work05.jpg" alt="권투"></div>
+                            <div class="work-txt">
+                                <h3>권투</h3>
+                                <h4>격투기</h4>
+                            </div>
+
+                            <div class="work-img"><img src="./images/img-work06.jpg" alt="아이스하키"></div>
+                            <div class="work-txt">
+                                <h3>아이스하키</h3>
+                                <h4>빙상</h4>
+                            </div>
+
+                            <div class="work-img"><img src="./images/img-work07.jpg" alt="스케이트보드"></div>
+                            <div class="work-txt">
+                                <h3>스케이트보드</h3>
+                                <h4>레포츠</h4>
+                            </div>
+
+                            <div class="work-img"><img src="./images/img-work08.jpg" alt="농구"></div>
+                            <div class="work-txt">
+                                <h3>농구</h3>
+                                <h4>구기</h4>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="sec divider">
+            <div class="container">
+                <hr>
+            </div>
+        </section>
+
+        <section class="sec blog" id="blog">
+            <div class="container">
+                <h2>BLOG</h2>
+                <div class="blog-list">
+                    <ul>
+                        <li>
+                            <div class="blog-img"><img src="./images/img-blog01.jpg" alt="블로그1"></div>
+                            <h3>2021-12-14</h3>
+                            <p>There are many variations of passages of Lorem Ipsum</p>
+                        </li>
+
+                        <li>
+                            <div class="blog-img"><img src="./images/img-blog02.jpg" alt="블로그2"></div>
+                            <h3>2021-12-10</h3>
+                            <p>There are many variations of passages of Lorem Ipsum</p>
+                        </li>
+
+                        <li>
+                            <div class="blog-img"><img src="./images/img-blog03.jpg" alt="블로그3"></div>
+                            <h3>2021-12-07</h3>
+                            <p>There are many variations of passages of Lorem Ipsum</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="sec contact" id="contact">
+            <div class="container">
+                <h2>CONTACT</h2>
+                <form>
+                    <label for="name">Name</label>
+                    <input type="text" name="name" id="name" placeholder="Name">
+
+                    <label for="phone">Phone</label>
+                    <input type="text" name="phone" id="phone" placeholder="Phone">
+
+                    <label for="email">Email Address</label>
+                    <input type="text" name="email" id="email" placeholder="Email Address">
+
+                    <label for="message">Massage</label>
+                    <textarea name="message" id="message" placeholder="Message"></textarea>
+
+                    <input type="submit" value="SEND MESSAGE">
+                </form>
+            </div>
+        </section>
+
+        <section class="sec map">
+            <div class="container">
+                <h2 class="hidden-tit">map</h2>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3163.5186420438504!2d126.67502091571082!3d37.54284277980234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357b7e16f11f3635%3A0xd3d8fb87825f4f2a!2z7Jew7Z2s7KeB7JeF7KCE66y47ZWZ6rWQ!5e0!3m2!1sko!2skr!4v1639463308072!5m2!1sko!2skr" width="1132" height="424" style="border:0;" allowfullscreen="" loading="lazy"></iframe>            
+            
+            </div>
+        </section>
+
+        <footer class="footer">
+            <div class="container">
+                <p>INDIGO</p>
+            </div>
+        </footer>
+    </section>
+
+    <script>
+        $(document).ready(function(){
+          $('.slide').bxSlider();
+        });
+    </script>
+
 </body>
 </html>

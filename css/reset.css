@@ -2,7 +2,7 @@
 
 html,head,title,body,h1,h2,h3,h4,h5,h6,p,ul,ol,li,table,tr,td,thead,tbody,tfoot,th,div,span,
 a,img,br,hr,pre,strong,form,label,input,select,textarea,fieldset,option,
-aside,address,article,audio,video,picture{
+aside,address,article,audio,video,picture,iframe{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
