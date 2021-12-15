@@ -1,3 +1,4 @@
+/* 데스크탑(1132px 이상) 스타일 */
 @charset 'UTF-8';
 
 .clearfix::after{
@@ -93,6 +94,26 @@ hr{
     float: left;
 }
 
+.header .btn-nav{
+    display: none;
+    float: right;
+    padding-top: 4px;
+    cursor: pointer;   
+}
+
+.header .btn-nav span{
+    width: 30px;
+    height: 4px;
+    margin-bottom: 6px;
+    border-radius: 2px;
+    background-color: #616161;
+    text-indent: -99999px;
+}
+
+.header .btn-nav span:last-child{
+    margin-bottom: 0;
+}
+
 .header .container nav{
     float: right;
 }
@@ -110,7 +131,8 @@ hr{
 .slider{
     position: relative;
     z-index: 900;
-    margin-top: 77px;}
+    margin-top: 77px;
+}
 
 .bx-controls-direction{
     display: none;
@@ -184,6 +206,7 @@ hr{
 .we-are li:nth-child(1)::before{
     background: url(../images/ico-pro01.jpg) no-repeat center top;
 }
+
 .we-are li:nth-child(2)::before{
     background-image: url(../images/ico-pro02.jpg);
 }
@@ -343,7 +366,6 @@ form fieldset:first-child input,form textarea{
     color: #3f51b5;
 }
 
-
 form fieldset:first-child input::placeholder,form textarea::placeholder{
     font-size: 12px;
     color: #3f51b5;
@@ -383,6 +405,7 @@ form input[type="submit"]{
     color: #3f51b5;
 }
 
+/* 태블릿(1131px 이하) 적용 스타일 */
 @media (max-width:1131px){
     .we-are .container,.blog .container,.contact .container,.map .container,.divider .container,.map iframe,.footer .container{
         width: 100%;
@@ -414,6 +437,7 @@ form input[type="submit"]{
     .we-are li{
         width: 48%;
         margin-right: 4%;
+        text-align: center;
     }
     
     .we-are li:nth-child(2n){
@@ -543,3 +567,53 @@ form input[type="submit"]{
     
 }
 
+/* 모바일(768px 이하) 적용 스타일 */
+@media (max-width:768px){
+    .header .btn-nav{
+        display: block;
+    }
+
+    .header nav{
+        display: none;
+        position: fixed;
+        left:0;
+        right: 0;
+        top:77.97px;
+        bottom: 0;
+        padding: 20px;
+        background-color: #000;
+    }
+
+    .header .container nav ul{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-flow: column;
+        justify-content: space-around;
+    }
+
+    .header .container nav ul li{
+        font-weight: 700;
+        font-size: 32px;
+        color: #fff;
+
+    }
+
+    .we-are li,.work li,.blog li{
+        width: 100%;
+        margin-right: 0;
+    }
+
+    .we-are li{
+        margin-bottom: 60px;
+        padding-left: 20px;
+        padding-right: 20px;
+
+    }
+    .we-are li:last-child{
+        margin-bottom: 0;
+    }
+
+
+
+}

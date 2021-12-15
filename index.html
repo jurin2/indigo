@@ -41,13 +41,6 @@
     <link rel="stylesheet" href="./css/responsive.css">
 
 
-
-    <!-- 데스크탑 스타일 -->
-    <!-- <link rel="stylesheet" href="./css/desktop.css"> -->
-
-    <!-- 태블릿 스타일 -->
-    <!-- <link rel="stylesheet" href="./css/tablet.css"> -->
-
     <title>Indigo</title>
     <style>
 
@@ -70,13 +63,31 @@
                     <a href="index.html">INDIGO</a>
                 </h1>
 
+                <div class="btn-nav" onclick="
+                    $('nav').slideToggle(500);
+                ">
+                    <span>네비게이션 호출</span>
+                    <span>네비게이션 호출</span>
+                    <span>네비게이션 호출</span>
+                </div>
+
                 <nav>
                     <ul>
-                        <li><a href="index.html">HOME</a></li>
-                        <li><a href="#we-are">WE ARE</a></li>
-                        <li><a href="#work">WORK</a></li>
-                        <li><a href="#blog">BLOG</a></li>
-                        <li><a href="#contact">CONTACT US</a></li>
+                        <li><a href="index.html" onclick="
+                            $('nav').slideUp();
+                            ">HOME</a></li>
+                        <li><a href="#we-are" onclick="
+                            $('nav').slideUp();
+                            ">WE ARE</a></li>
+                        <li><a href="#work" onclick="
+                            $('nav').slideUp();
+                            ">WORK</a></li>
+                        <li><a href="#blog" onclick="
+                            $('nav').slideUp();
+                            ">BLOG</a></li>
+                        <li><a href="#contact" onclick="
+                            $('nav').slideUp();
+                            ">CONTACT US</a></li>
                     </ul>
                 </nav>
             </div>
@@ -100,33 +111,28 @@
             <div class="container clearfix">
                     <h2>we are</h2>
                     <p>
-                        Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a
-                        piece of classical Latin literature from 45 BC, making it over 2000 years old.
+                        Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.
                     </p>
                              
                    <ul class="clearfix">
                         <li>
                            <h3>HOME</h3>
-                           <p>Lorem Ipsum is simply dummy text of
-                            the printing and typesetting industry.</p>
+                           <p>Lorem Ipsum is simply dummy text of the printing and text text typesetting industry.</p>
                         </li>
 
                         <li>
                            <h3>WE ARE</h3>
-                           <p>Lorem Ipsum is simply dummy text of
-                            the printing and typesetting industry.</p>
+                           <p>Lorem Ipsum is simply dummy text of the printing and text text typesetting industry.</p>
                         </li>
 
                         <li>
                            <h3>WORK</h3>
-                           <p>Lorem Ipsum is simply dummy text of
-                            the printing and typesetting industry.</p>
+                           <p>Lorem Ipsum is simply dummy text of the printing and text text typesetting industry.</p>
                         </li>
 
                         <li>
                            <h3>BLOG</h3>
-                           <p>Lorem Ipsum is simply dummy text of
-                            the printing and typesetting industry.</p>
+                           <p>Lorem Ipsum is simply dummy text of the printing and text text typesetting industry.</p>
                         </li>
                    </ul>      
             </div>
@@ -287,6 +293,8 @@
         $(document).ready(function(){
           $('.slide').bxSlider();
         });
+
+
     </script>
 
 </body>
